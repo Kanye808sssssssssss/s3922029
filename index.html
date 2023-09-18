@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Haolun Liu </title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="playerControls.js" defer></script>
+
+  </head>
+
+  <body>
+  	<div id="layout">
+  	
+  	<!-- When I was doing the layout I thought of the youtube layout I tried to put the video in the middle. -->
+
+    
+    <div class="video-player-wrapper w-100">
+      <!-- this element holds the video element and the overlay -->
+      <div class="video-element-wrapper w-100">
+
+        
+        <img id="heroImage" src="./bg-band.png" alt="">
+
+        <video id="audioElement" controls>
+          <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4">
+        </video>
+
+        <img id="audioPlayOverlay" src="./icons/play.svg">
+
+      </div>
+      <!-- this element holds all of the custom controls -->
+      <div class="video-controls-wrapper" id="controlsWrapper">
+
+
+         <!-- To realize the basic functionality of the video player I tried the video progress bar, sound control buttons, full-screen playback buttons -->
+
+        <button class="video-control-button" id="playButton"></button>
+
+        <progress class="video-progress-bar" id="progressBar" value="0"></progress>
+				<button class="video-control-button" id="muteButton"></button>
+        <button class="video-control-button" id="fullScreenButton"></button>
+      </div>
+    </div>
+    <div class="mt-100">
+			<div id="comments">
+				<div class="comment">
+					<div class="imgWarp">
+						<img src="img/1.jpg" alt="Avatar">
+					</div>
+					 
+			           <!-- When I was making the layout of the website I thought of the youtube website, under the video player there are a lot of user comments so I created a couple of virtual users. -->
+					<div class="content">
+						<p>"Wow, this video is absolutely mesmerizing! The level of technology showcased here is mind-blowing. It's incredible to see how far we've come in terms of innovation. Kudos to the creators for sharing this fascinating content!"</p>
+					</div>
+				</div>
+
+				<div class="comment">
+					<div class="imgWarp">
+					<img src="img/2.jpg" alt="Avatar">
+					</div>
+					<div class="content">
+						<p>"I'm thoroughly impressed by this video! The technological advancements featured in it are simply amazing. As someone who grew up with older tech, it's inspiring to witness the cutting-edge developments happening in today's world. This video made my day!"</p>	
+					</div>
+				</div>
+				<div class="comment">
+					<div class="imgWarp">
+					<img src="img/3.jpg" alt="Avatar">
+					</div>
+					<div class="content">
+						<p>"This video is a fantastic showcase of the tech wonders of our time. It's evident that the future is here, and it's mind-boggling. I appreciate how this video explains complex concepts in a way that's easy to understand. It's a testament to how technology continues to shape our lives positively."</p>
+					</div>
+				</div>
+			</div>
+			<!-- When creating the comments section I wanted to separate it from the comments that are sent so I chose a container with both top and bottom margins. -->
+			<div class="mt-100 mb-100">
+				<textarea placeholder="you can comment here" id="textArea"></textarea>
+				<button id="send">send comment</button>
+			</div>
+		</div>
+		</div>
+
+  </body>
+
+</html>

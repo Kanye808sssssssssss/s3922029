@@ -1,0 +1,228 @@
+* {
+	box-sizing: border-box;
+	background-origin: border-box;
+	margin: 0;
+}
+
+
+
+
+:root {
+	--col-01: #222323;
+	--col-02: #f0f6f0;
+	--col-03: #5252ff;
+	--col-04: #b6e878;
+	--col-05: #bcbdbc;
+	--col-06: #6f6f6f;
+	--border: 1px solid var(--col-02);
+}
+
+.video-player-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	margin: 0 auto;
+}
+
+
+/* becuase I want to overlay the play icon on the video they need to be in their own wrapper */
+
+.video-element-wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+#audioElement {
+	width: 100%;
+	grid-column: 1/2;
+	grid-row: 1/2;
+}
+
+#heroImage {
+	width: 100%;
+	grid-column: 1/2;
+	grid-row: 1/2;
+}
+
+#audioPlayOverlay {
+	width: 8rem;
+	height: 8rem;
+	grid-column: 1/2;
+	grid-row: 1/2;
+	justify-self: center;
+	align-self: center;
+	opacity: 0.6;
+	pointer-events: none;
+	display: none;
+}
+
+.video-controls-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+
+/* this overwrites the above display:flex - something which is then undone when the JS loads */
+
+#controlsWrapper {
+	display: none;
+}
+
+.video-control-button {
+	width: 2rem;
+	height: 2rem;
+	padding: .1rem;
+	border: none;
+	cursor: pointer;
+}
+
+.video-control-button:hover {
+	background-color: var(--col-05);
+}
+
+.video-control-button:active {
+	background-color: var(--col-06);
+}
+
+.button-icon {
+	pointer-events: none;
+}
+
+#playButton {
+	background-image: url('./icons/play.svg');
+}
+
+#muteButton {
+	background-image: url('./icons/mute.svg');
+}
+
+#fullScreenButton {
+	background-image: url('./icons/fullScreen.svg');
+}
+
+.video-progress-bar {
+	/* Reset the default appearance */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	height: 2rem;
+	flex-grow: 1;
+	cursor: pointer;
+	background-color: var(--col-01);
+	box-shadow: 0 1px 2px var(--col-02) inset;
+}
+
+::-moz-progress-bar {
+	background-color: var(--col-02);
+}
+
+::-webkit-progress-bar {
+	background-color: var(--col-01);
+	box-shadow: 0 1px 2px var(--col-02) inset;
+}
+
+::-webkit-progress-value {
+	background-color: var(--col-02);
+}
+
+.timeline-loading {
+	background-image: -moz-repeating-linear-gradient(45deg, var(--col-03) 0% 2%, transparent 2% 4%, red 4%);
+	background-size: 200% 100%;
+	animation: loadingAnimation 4s linear infinite;
+}
+
+@keyframes loadingAnimation {
+	100% {
+		background-position: 50% 0%;
+	}
+}
+
+
+/*---------*/
+
+/*As I mentioned above, I have made reference to the layout of sites like youtube and centered the video frames small.*/
+
+#layout {
+	width: 1140px;
+	margin: 0 auto;
+}
+
+/*---------*/
+
+.comment {
+	background: #E2E2E2;
+	margin-bottom: 80px;
+	padding: 30px;
+	height: 300px;
+	position: relative;
+	display: table;
+}
+
+.comment img {
+	height: 100%;
+	position: relative;
+}
+
+/*For the comments area I wanted to separate the background of the page so I chose a gray area to separate the white background.*/
+
+.comment .content {
+	width: 70%;
+	margin: 0 auto;
+	font-size: 30px;
+	line-height: 50px;
+	text-shadow: darkgray 2px 2px 3px;
+	position: relative;
+}
+
+/*Text Shadow*/
+
+/*I realized that my image was too large the image exceeded the length and width of the box so I used theSetting up image overflow handling, absolute positioning of images*/
+
+.imgWarp {
+	overflow: hidden;
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	left: -40px;
+	top: -40px;
+}
+
+/*To make the site more realistic I've simulated a real video player whereby you can see a zoomed in user avatar when hovering over a commented user avatar for easier viewing.*/
+
+.imgWarp:hover {
+	transform: scale(1.2);
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.mt-50 {
+	margin-top: 50px;
+}
+.mt-100 {
+	margin-top: 100px;
+}
+.mb-100{
+	margin-bottom: 100px;
+}
+#textArea{
+	width: 100%;
+	height: 300px;
+	font-size: 30px;
+	padding: 20px;
+}
+#send{
+	border: none;
+	background: cornflowerblue;
+	border-radius:20px ;
+	width: 100%;
+	height: 100px;
+	padding: 10px;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	margin-top: 20px;
+}
